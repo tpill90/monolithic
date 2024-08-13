@@ -1,4 +1,4 @@
-FROM lancachenet/ubuntu-nginx:latest
+FROM lancachenet/ubuntu-nginx:local
 LABEL version=3
 LABEL description="Single caching container for caching game content at LAN parties."
 LABEL maintainer="LanCache.Net Team <team@lancache.net>"
