@@ -30,8 +30,8 @@ RUN git clone --depth=1 --no-single-branch https://github.com/uklans/cache-domai
 COPY overlay/ /
 
 RUN rm /etc/nginx/sites-enabled/* /etc/nginx/stream-enabled/* ;\
-    rm /etc/nginx/conf.d/gzip.conf ;\
     chmod 754  /var/log/tallylog ; \
+    chmod -R 666 /etc/nginx/sites-* /etc/nginx/conf.d/* /etc/nginx/stream.d/* /etc/nginx/stream-*; \
     id -u ${WEBUSER} &> /dev/null || adduser --system --home /var/www/ --no-create-home --shell /bin/false --group --disabled-login ${WEBUSER} ;\
     chmod 755 /scripts/*		;\
     mkdir -m 755 -p /data/cache		;\
